@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saints of Lorain - Electronic Press Kit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+            border-bottom: 3px solid #fff;
+            margin-bottom: 40px;
+        }
+        
+        .logo-container {
+            margin-bottom: 30px;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            color: #999;
+            margin-top: 10px;
+        }
+        
+          .news-section {
+            margin: 60px 0;
+            scroll-margin-top: 80px;
+        }
+
+        .news-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+
+        .news-item {
+            background: #1a1a1a;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-left: 5px solid #fff;
+        }
+
+        .news-item h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .news-date {
+            color: #999;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        .news-item img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
+            border: 2px solid #333;
+        }
+
+        .news-item p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        
+        .story-section {
+            margin: 60px 0;
+        }
+        
+        .story-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+        
+        .story-section p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+        
+        .lineup {
+            background: #1a1a1a;
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .lineup h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .lineup ul {
+            list-style: none;
+            font-size: 1.2em;
+        }
+        
+        .lineup li {
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .featured-artwork {
+            margin: 40px 0;
+            text-align: center;
+        }
+        
+        .featured-artwork img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border: 3px solid #fff;
+        }
+        
+        .featured-artwork .caption {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #999;
+        }
+        
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .artwork-item {
+            position: relative;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .artwork-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+            border: 2px solid #333;
+        }
+        
+        .artwork-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .artwork-item .caption {
+            text-align: center;
+            padding: 10px;
+            background: #1a1a1a;
+            font-size: 0.9em;
+            color: #999;
+        }
+        
+        .band-photo {
+            margin: 60px 0;
+        }
+        
+        .band-photo img {
+            width: 100%;
+            height: auto;
+            border: 3px solid #fff;
+        }
+        
+        .band-photo .credit {
+            text-align: right;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+       .contact-section {
+            background: #1a1a1a;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+        
+        .contact-info div {
+            padding: 10px;
+            background: #0a0a0a;
+        }
+        
+        .contact-info a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .email-signup {
+            background: #0a0a0a;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .email-signup h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .email-signup p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .email-signup input {
+            padding: 15px;
+            font-size: 1em;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
+            background: #1a1a1a;
+            border: 2px solid #666;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .email-signup button {
+            padding: 15px 40px;
+            font-size: 1em;
+            background: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            font-family: 'Courier New', monospace;
+        }
+
+        .email-signup button:hover {
+            background: #666;
+            color: #fff;
+        }
+        
+        .streaming-links {
+            margin: 40px 0;
+            padding: 30px;
+            background: #1a1a1a;
+            text-align: center;
+        }
+        
+        .streaming-links h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .streaming-links a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        .spotify-embed {
+            margin: 40px 0;
+            padding: 30px;
+            background: #1a1a1a;
+        }
+        
+        .spotify-embed h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        
+        .tour-dates {
+            margin: 60px 0;
+        }
+        
+        .tour-dates h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+        
+        .bandsintown-widget {
+            margin: 30px 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid #fff;
+            margin-top: 60px;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            .release-info, .lineup, .contact-section, .streaming-links, .spotify-embed {
+                background: white;
+                border: 1px solid black;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .artwork-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="banner-logo.jpg" alt="Saints of Lorain">
+            </div>
+            <p class="tagline">Cleveland Punk Rock</p>
+        </header>
+
+           <!-- NEWS SECTION -->
+        <section class="news-section" id="news">
+            <h2>NEWS</h2>
+            
+            <article class="news-item">
+                <h3>NEW ALBUM: BEFORE WE WERE SAINTS</h3>
+                <p class="news-date">October 12, 2025</p>
+                <img src="album-cover.jpeg" alt="Before We Were Saints">
+                <p><strong>Release Date:</strong> November 1, 2025 (All Saints Day)</p>
+                <p><strong>Lead Single:</strong> "Nothing to Lose" - Available Now on All Platforms</p>
+                <p><strong>Release Show:</strong> November 1, 2025 - The Hydrant, Berea, Ohio</p>
+            </article>
+
+            <!-- ADD MORE NEWS ITEMS HERE AS THEY HAPPEN -->
+        </section>
+
+        <section class="story-section">
+            <h2>THE STORY</h2>
+            <p>Saints of Lorain carries the DNA of Cleveland underground punk band Al & the Coholics, but this is no simple reunion. When Al & the Coholics exploded into Cleveland's underground scene in 1999, they were young, pissed off, and had nothing to lose. The music was raw, unfiltered, and unapologetic.</p>
+
+            <p>The road traveled hasn't been easy. They lost friends and brothers who couldn't outrun their demons. The most painful turning point came with the death of drummer Jonny Blood in 2014.</p>
+
+            <p>What started as Saints of Lorain accidentally became something bigger. After original Saint Todd Styles had to step away in 2023 due to health issues, they went searching for a guitarist, and after a year they landed two. Rejoined by original Coholic Greg Melnyk and longtime scene veteran Dill Hams (The Episodes, Hemmingway Hammers, Hams), who joined in 2024. Together, they brought power, speed, and soul into the new lineup. The result was unexpected: the band unintentionally became four-fifths of the old Al & the Coholics, but with a new identity and purpose. And for drummer Rob Young, adding the music of the Coholics meant the promise he made to his brother, that the music would never die, was finally kept.</p>
+
+            <p>Their lead single, "Nothing to Lose," from the upcoming compilation Before we were Saints, is a reflection on who they were, while the album cover serves as a warning of the consequences they survived.</p>
+
+            <p>What might sound like nostalgia is actually evolution. This is what happens when you refuse to let your past define your future.</p>
+        </section>
+
+        <div class="lineup">
+            <h3>CURRENT LINEUP</h3>
+            <ul>
+                <li>Allen Jasper - Vocals</li>
+                <li>Nick Pshock - Bass</li>
+                <li>Greg Melnyk - Guitar</li>
+                <li>Dill Hams - Guitar</li>
+                <li>Rob Young - Drums</li>
+            </ul>
+        </div>
+
+        <div class="band-photo">
+            <img src="band-photo.jpg" alt="Saints of Lorain band photo">
+            <p class="credit">Photo by Angie Maria</p>
+        </div>
+
+        <section class="story-section">
+            <h2>THE ROAD</h2>
+            <p>Beyond the losses and the year-long search for guitarists, there was the reality of what came after: integrating new players while shows were already booked.</p>
+
+            <p>They'd been through guitarists before landing Greg Melnyk and Dill Hams permanently, and each time meant starting over. Relearning songs, rebuilding chemistry, hoping this one would stick. Every restart tested their resolve. Every new face in the room meant proving themselves all over again—not just to audiences, but to each other. Dill came on board first in January 2024, followed by Greg in March, who took the stage with them for the first time that May.</p>
+
+            <p>Once Greg joined, something clicked. It was natural being back in the same room with the original Coholics—Al, Nick, and Greg together again after all those years. For Rob, who'd grown up around the Coholics his whole life and had already played reunion shows with them, it felt like coming home. That chemistry didn't just revive old energy; it helped Dill thrive too. What had felt like two separate additions suddenly became one cohesive unit.</p>
+
+            <p>The constant restarts also derailed their original plan. After releasing O.D. (Obligatory Demo), they'd intended to release it legitimately. But starting over with new members meant pushing that aside. From January to September 2025, they were in the studio recording 25 songs in total. The result is Before we were Saints—a look back at who they were before they properly release what O.D. was always meant to be, with a third album scheduled for spring.</p>
+        </section>
+
+        <section class="story-section">
+            <h2>WHO THEY ARE</h2>
+            <p>Saints of Lorain doesn't fit neatly into any category. They're not a nostalgia act trading on past glory, and they're not trying to reinvent punk rock. What they do is simple: they play loud, fast, and honest. No gimmicks. No pretense. Just five guys who've earned their right to be there and refused to quit.</p>
+
+            <p>What sets them apart is authenticity that can't be faked. This isn't a band formed in a practice space—it's built on 25 years of history, loss, and survival. When Al screams into a mic, when Greg and Dill's guitars collide, when Rob punishes the drums, when Nick holds down the low end—it's not a performance act.</p>
+
+            <p>What they're most proud of isn't any single song or show, it's that they're still here. Still making music. Still honoring the dead by refusing to die themselves.</p>
+
+            <p>What separates them from others is simple: they've lived it. Every lyric. Every riff. Every beat. This isn't borrowed rebellion or manufactured anger. It's the real cost of a life spent refusing to compromise, and the music sounds like it.</p>
+        </section>
+
+        <section class="story-section">
+            
+
+        <!-- MUSIC SECTION -->
+        <section class="story-section" id="music">
+            <h2>MUSIC</h2>
+            
+            <div class="spotify-embed">
+                <h3>STREAM ON SPOTIFY</h3>
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/5PA4KL1QOOVBQvEpSFH3yD?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <h3 style="font-size: 1.8em; margin-bottom: 20px; text-transform: uppercase;">STREAM EVERYWHERE</h3>
+                <div class="social-links">
+                    <a href="https://open.spotify.com/artist/5PA4KL1QOOVBQvEpSFH3yD" target="_blank" class="social-button">SPOTIFY</a>
+                    <a href="https://stsolrn.bandcamp.com" target="_blank" class="social-button">BANDCAMP</a>
+                    <a href="https://www.youtube.com/@SaintsofLorain" target="_blank" class="social-button">YOUTUBE</a>
+                    <a href="https://music.apple.com/us/artist/saints-of-lorain/1671087352" target="_blank" class="social-button">APPLE MUSIC</a>
+                </div>
+            </div>
+
+            <h2 style="font-size: 2.5em; margin: 60px 0 30px; text-transform: uppercase; border-bottom: 2px solid #fff; padding-bottom: 10px;">DISCOGRAPHY</h2>
+            
+            <div class="artwork-grid">
+                <a href="https://stsolrn.bandcamp.com/album/before-we-were-saints" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="artwork-item">
+                        <img src="album-cover.jpeg" alt="Before We Were Saints">
+                        <div class="caption">
+                            <strong>BEFORE WE WERE SAINTS</strong><br>
+                            EP • November 1, 2025<br>
+
+                        </div>
+                    </div>
+                </a>
+				
+				   <a href="https://open.spotify.com/album/2qUtxZGJfiyYNlMVUZbVyr?si=IXwZwQo6TMmqKy6gY68Cyg" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="artwork-item">
+                        <img src="pen-in-jugular.jpg" alt="Pen in Your Jugular">
+                        <div class="caption">
+                            <strong>"PEN IN YOUR JUGULAR"</strong><br>
+                            Single • October 2025
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://open.spotify.com/album/5nbUUz9xSZ70YGCDQt5msC?si=jNwl-oD2QqqeUGLCvttnAA" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="artwork-item">
+                        <img src="nothing-to-lose.jpg" alt="Nothing to Lose">
+                        <div class="caption">
+                            <strong>"NOTHING TO LOSE"</strong><br>
+                            Single • September 2025
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </section>
+		
+		    <!-- Featured Video -->
+        <div class="video-section">
+            <h3>OUR STORY</h3>
+            <div class="video-container">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/0yshERCfQEQ" title="Saints of Lorain - Nothing to Lose" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <section class="Shows">
+            <h2>Shows</h2>
+            <div class="bandsintown-widget">
+                <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
+                <a class="bit-widget-initializer"
+                    data-artist-name="id_15517303"
+                    data-events-to-display=""
+                    data-background-color="rgba(0,0,0,1)"
+                    data-separator-color="rgba(221,221,221,1)"
+                    data-text-color="rgba(255,255,255,1)"
+                    data-font="Helvetica"
+                    data-auto-style="true"
+                    data-button-label-capitalization="uppercase"
+                    data-header-capitalization="uppercase"
+                    data-location-capitalization="uppercase"
+                    data-venue-capitalization="uppercase"
+                    data-display-local-dates="true"
+                    data-local-dates-position="tab"
+                    data-display-past-dates="true"
+                    data-display-details="false"
+                    data-display-lineup="false"
+                    data-display-start-time="false"
+                    data-social-share-icon="false"
+                    data-display-limit="all"
+                    data-date-format="MMM. D, YYYY"
+                    data-date-orientation="horizontal"
+                    data-date-border-color="#4A4A4A"
+                    data-date-border-width="1px"
+                    data-date-capitalization="capitalize"
+                    data-date-border-radius="10px"
+                    data-event-ticket-cta-size="medium"
+                    data-event-custom-ticket-text=""
+                    data-event-ticket-text="TICKETS"
+                    data-event-ticket-icon="false"
+                    data-event-ticket-cta-text-color="rgba(255,255,255,1)"
+                    data-event-ticket-cta-bg-color="rgba(74,74,74,1)"
+                    data-event-ticket-cta-border-color="rgba(74,74,74,1)"
+                    data-event-ticket-cta-border-width="0px"
+                    data-event-ticket-cta-border-radius="2px"
+                    data-sold-out-button-text-color="rgba(255,255,255,1)"
+                    data-sold-out-button-background-color="rgba(74,74,74,1)"
+                    data-sold-out-button-border-color="rgba(74,74,74,1)"
+                    data-sold-out-button-clickable="true"
+                    data-event-rsvp-position="left"
+                    data-event-rsvp-cta-size="medium"
+                    data-event-rsvp-only-show-icon="false"
+                    data-event-rsvp-text="RSVP"
+                    data-event-rsvp-icon="false"
+                    data-event-rsvp-cta-text-color="rgba(74,74,74,1)"
+                    data-event-rsvp-cta-bg-color="rgba(255,255,255,1)"
+                    data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
+                    data-event-rsvp-cta-border-width="1px"
+                    data-event-rsvp-cta-border-radius="2px"
+                    data-follow-section-position="top"
+                    data-follow-section-alignment="center"
+                    data-follow-section-header-text="Get updates on new shows, new music, and more"
+                    data-follow-section-cta-size="medium"
+                    data-follow-section-cta-text="FOLLOW"
+                    data-follow-section-cta-icon="false"
+                    data-follow-section-cta-text-color="rgba(126,211,33,1)"
+                    data-follow-section-cta-bg-color="rgba(0,0,0,1)"
+                    data-follow-section-cta-border-color="rgba(74,74,74,1)"
+                    data-follow-section-cta-border-width="0px"
+                    data-follow-section-cta-border-radius="2px"
+                    data-play-my-city-position="bottom"
+                    data-play-my-city-alignment="center"
+                    data-play-my-city-header-text="Don't see a show near you?"
+                    data-play-my-city-cta-size="medium"
+                    data-play-my-city-cta-text="REQUEST A SHOW"
+                    data-play-my-city-cta-icon="false"
+                    data-play-my-city-cta-text-color="rgba(126,211,33,1)"
+                    data-play-my-city-cta-bg-color="rgba(0,0,0,1)"
+                    data-play-my-city-cta-border-color="rgba(74,74,74,1)"
+                    data-play-my-city-cta-border-width="0px"
+                    data-play-my-city-cta-border-radius="2px"
+                    data-optin-font=""
+                    data-optin-text-color=""
+                    data-optin-bg-color=""
+                    data-optin-cta-text-color=""
+                    data-optin-cta-bg-color=""
+                    data-optin-cta-border-width=""
+                    data-optin-cta-border-radius=""
+                    data-optin-cta-border-color=""
+                    data-language="en"
+                    data-layout-breakpoint="900"
+                    data-app-id=""
+                    data-affil-code=""
+                    data-bit-logo-position="bottomRight"
+                    data-bit-logo-color="rgba(255,255,255,1)"
+                ></a>
+            </div>
+        </section>
+		
+		   <!-- CONTACT INFO ON HOME -->
+        <div class="contact-section">
+            <h2>CONTACT</h2>
+            <div class="contact-info">
+                <div><strong>Booking/Inquiries:</strong> saintsoflorain@gmail.com</div>
+            </div>
+
+            <div class="email-signup">
+                <h3>JOIN OUR MAILING LIST</h3>
+                <p>Get updates on new music, shows, and more</p>
+                <input type="email" placeholder="Enter your email">
+                <br>
+                <button>SUBSCRIBE</button>
+                <p style="font-size: 0.9em; margin-top: 15px;">* Email signup coming soon - follow us on social media in the meantime</p>
+            </div>
+        </div>
+
+
+        <footer>
+            <p>SAINTS OF LORAIN © 2025 • CLEVELAND, OHIO</p>
+        </footer>
+    </div>
+
+</body>
+</html>
